@@ -8,9 +8,8 @@ import os
 
 def predictMask(image, face = "face_detector", model = "mask_detector.model"):
   print("[INFO] loading face detector model...")
-  prototxtPath = os.path.sep.join([face, "deploy.prototxt"])
-  weightsPath = os.path.sep.join([face,
-    "res10_300x300_ssd_iter_140000.caffemodel"])
+  prototxtPath = "deploy.prototxt"
+  weightsPath = "res10_300x300_ssd_iter_140000.caffemodel"
   net = cv2.dnn.readNet(prototxtPath, weightsPath)
 
   # load the face mask detector model from disk
@@ -83,5 +82,5 @@ app = Flask(__name__)
   
 @app.route("/") 
 def home_view():
-	(labels, image) = predictMask('images/pic1.jpeg')
+	(labels, image) = predictMask('pic1.jpeg')
 	return labels
