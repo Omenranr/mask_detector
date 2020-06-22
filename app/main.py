@@ -4,9 +4,11 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 import numpy as np
 import cv2
+from predictMask import predictionfile
 
 app = Flask(__name__) 
   
 @app.route("/") 
-def home_view(): 
-        return "<h1>Welcome to Geeks for Geeks</h1>"
+def home_view():
+		(labels, image) = predictMask('images/pic1.jpeg')
+        return labels
