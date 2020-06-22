@@ -6,3 +6,4 @@ opencv-python==4.2.0.*
 matplotlib
 scipy==1.4.1
 flask
+gunicorn
