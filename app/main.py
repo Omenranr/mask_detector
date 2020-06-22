@@ -10,5 +10,5 @@ app = Flask(__name__)
   
 @app.route("/") 
 def home_view():
-		(labels, image) = predictMask('images/pic1.jpeg')
-        return labels
+	(labels, image) = predictMask('images/pic1.jpeg')
+	return labels
